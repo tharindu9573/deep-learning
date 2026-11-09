@@ -23,12 +23,14 @@ y = np.array([[0],
 np.random.seed(42)
 epoches = 10000
 lr = 0.5
-hidden_layers = 6
+input_neurons = 2
+hidden_neurons = 6
 
-W1 = np.random.randn(2, hidden_layers) * .5  # (2, 6)
-b1 = np.zeros((1, hidden_layers))
+xavier_std = np.sqrt(2.0 / (input_neurons + hidden_neurons))
+W1 = np.random.randn(2, hidden_neurons) * xavier_std  # (2, 6)
+b1 = np.zeros((1, hidden_neurons))
 
-W2 = np.random.randn(hidden_layers, 1)  # (6, 1)
+W2 = np.random.randn(hidden_neurons, 1)  # (6, 1)
 b2 = np.zeros((1, 1))
 
 
